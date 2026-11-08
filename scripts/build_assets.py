@@ -234,7 +234,8 @@ def build_hero():
 
 
 def build_tiles():
-    """assets/tile-*.svg, 320x170 each. 4 category cards with block clusters and pulsing borders."""
+    """assets/tile-*.svg, 425x170 each (two side-by-side = 850).
+    Title/subtitle at bottom-left (x=28), block cluster on right half centered around x=320, y~85."""
     tiles_data = [
         (
             "tile-mods.svg",
@@ -242,10 +243,10 @@ def build_tiles():
             "Minecraft, Java",
             "0s",
             (
-                # Stacked blocks (1.4x larger, centered in x 28..292, y 14..90)
-                f"{cube(142, 68, 20, LIGHT, PURPLE, DEEP)}\n"
-                f"{cube(178, 68, 20, LIGHT, PURPLE, DEEP)}\n"
-                f"{cube(160, 44, 20, LIGHT, PURPLE, DEEP)}"
+                # Stacked blocks on right half (cx=320, cy~85)
+                f"{cube(302, 97, 20, LIGHT, PURPLE, DEEP)}\n"
+                f"{cube(338, 97, 20, LIGHT, PURPLE, DEEP)}\n"
+                f"{cube(320, 73, 20, LIGHT, PURPLE, DEEP)}"
             ),
         ),
         (
@@ -254,13 +255,13 @@ def build_tiles():
             "Raspberry Pi, self-hosted",
             "-1s",
             (
-                # Flat wide slab with 3 blinking LEDs
-                f"{cube(126, 56, 22, LIGHT, PURPLE, DEEP)}\n"
-                f"{cube(160, 56, 22, LIGHT, PURPLE, DEEP)}\n"
-                f"{cube(194, 56, 22, LIGHT, PURPLE, DEEP)}\n"
-                f'<circle cx="142" cy="64" r="3" fill="{LIGHT}"><animate attributeName="opacity" values="1;0.2;1" dur="1.2s" begin="0s" repeatCount="indefinite"/></circle>\n'
-                f'<circle cx="160" cy="64" r="3" fill="{PALE}"><animate attributeName="opacity" values="0.2;1;0.2" dur="0.9s" begin="0.3s" repeatCount="indefinite"/></circle>\n'
-                f'<circle cx="178" cy="64" r="3" fill="{LIGHT}"><animate attributeName="opacity" values="1;0.2;1" dur="1.5s" begin="0.7s" repeatCount="indefinite"/></circle>'
+                # Flat wide slab with 3 blinking LEDs on right half
+                f"{cube(286, 85, 22, LIGHT, PURPLE, DEEP)}\n"
+                f"{cube(320, 85, 22, LIGHT, PURPLE, DEEP)}\n"
+                f"{cube(354, 85, 22, LIGHT, PURPLE, DEEP)}\n"
+                f'<circle cx="302" cy="93" r="3" fill="{LIGHT}"><animate attributeName="opacity" values="1;0.2;1" dur="1.2s" begin="0s" repeatCount="indefinite"/></circle>\n'
+                f'<circle cx="320" cy="93" r="3" fill="{PALE}"><animate attributeName="opacity" values="0.2;1;0.2" dur="0.9s" begin="0.3s" repeatCount="indefinite"/></circle>\n'
+                f'<circle cx="338" cy="93" r="3" fill="{LIGHT}"><animate attributeName="opacity" values="1;0.2;1" dur="1.5s" begin="0.7s" repeatCount="indefinite"/></circle>'
             ),
         ),
         (
@@ -269,13 +270,13 @@ def build_tiles():
             "Discord, scripts",
             "-2s",
             (
-                # Two cubes with a pulsing connecting line
-                f'<line x1="120" y1="54" x2="200" y2="54" stroke="{LIGHT}" stroke-width="3" stroke-dasharray="4,4">\n'
+                # Two cubes with a pulsing connecting line on right half
+                f'<line x1="280" y1="85" x2="360" y2="85" stroke="{LIGHT}" stroke-width="3" stroke-dasharray="4,4">\n'
                 f'  <animate attributeName="stroke-opacity" values="0.25;1;0.25" dur="1.6s" repeatCount="indefinite"/>\n'
                 f"</line>\n"
-                f"{cube(120, 54, 22, LIGHT, PURPLE, DEEP)}\n"
-                f"{cube(160, 54, 11, LIGHT, PURPLE, DEEP)}\n"
-                f"{cube(200, 54, 22, LIGHT, PURPLE, DEEP)}"
+                f"{cube(280, 85, 22, LIGHT, PURPLE, DEEP)}\n"
+                f"{cube(320, 85, 11, LIGHT, PURPLE, DEEP)}\n"
+                f"{cube(360, 85, 22, LIGHT, PURPLE, DEEP)}"
             ),
         ),
         (
@@ -285,13 +286,13 @@ def build_tiles():
             "-3s",
             (
                 # Cube with browser-bar slab directly attached on top, all y >= 14 at float peak (-6px)
-                f"{cube(160, 56, 22, LIGHT, PURPLE, DEEP)}\n"
-                f'<polygon points="160.0,49.0 179.1,38.0 160.0,27.0 140.9,38.0" fill="{LIGHT}"/>\n'
-                f'<polygon points="160.0,49.0 140.9,38.0 140.9,45.0 160.0,56.0" fill="{PURPLE}"/>\n'
-                f'<polygon points="160.0,49.0 160.0,56.0 179.1,45.0 179.1,38.0" fill="{DEEP}"/>\n'
-                f'<circle cx="146.0" cy="44.5" r="1.8" fill="{PALE}"/>\n'
-                f'<circle cx="151.0" cy="47.5" r="1.8" fill="{PALE}"/>\n'
-                f'<circle cx="156.0" cy="50.5" r="1.8" fill="{PALE}"/>'
+                f"{cube(320, 85, 22, LIGHT, PURPLE, DEEP)}\n"
+                f'<polygon points="320.0,78.0 339.1,67.0 320.0,56.0 300.9,67.0" fill="{LIGHT}"/>\n'
+                f'<polygon points="320.0,78.0 300.9,67.0 300.9,74.0 320.0,85.0" fill="{PURPLE}"/>\n'
+                f'<polygon points="320.0,78.0 320.0,85.0 339.1,74.0 339.1,67.0" fill="{DEEP}"/>\n'
+                f'<circle cx="306.0" cy="73.5" r="1.8" fill="{PALE}"/>\n'
+                f'<circle cx="311.0" cy="76.5" r="1.8" fill="{PALE}"/>\n'
+                f'<circle cx="316.0" cy="79.5" r="1.8" fill="{PALE}"/>'
             ),
         ),
     ]
@@ -314,7 +315,7 @@ def build_tiles():
 
         body = f"{cluster_svg}\n{text_content}"
         font_text = f"{title} {subtitle}"
-        svg_content = svg(320, 170, body, text_for_font=font_text, card_attrs=card_animate)
+        svg_content = svg(425, 170, body, text_for_font=font_text, card_attrs=card_animate)
 
         out_path = os.path.join(ASSETS_DIR, fname)
         with open(out_path, "w", encoding="utf-8") as f:
@@ -323,8 +324,8 @@ def build_tiles():
 
 
 def build_stack():
-    """assets/stack.svg, 600x250. 4 cols x 2 rows chips with bobbing isometric cubes (no face letters)."""
-    w, h = 600, 250
+    """assets/stack.svg, 850x170. 8 chips in ONE row of 8 equal columns (col width 106.25)."""
+    w, h = 850, 170
     chips = [
         ("Java", "#b78cf7", "#8b4cdb", "#5a259c"),
         ("TypeScript", "#9d92fc", "#6d5dfc", "#4332c8"),
@@ -336,23 +337,23 @@ def build_stack():
         ("Raspberry Pi", "#d978e8", "#aa3cc0", "#6f1a82"),
     ]
 
-    col_xs = [80, 226, 374, 520]
-    row_cy = [84, 170]
-    label_y = [132, 218]
+    col_w = w / 8.0  # 106.25
+    cy = 88.0
+    lbl_y = 138.0
 
-    body_parts = ['<text x="28" y="44" font-size="26" fill="' + LIGHT + '">Stack</text>']
+    # If any label wider than 100px at 20px, reduce all labels to 17px
+    max_label_w_20 = max(text_width(name, 20) for name, *_ in chips)
+    font_sz = 17 if max_label_w_20 > 100.0 else 20
+
+    body_parts = ['<text x="28" y="40" font-size="26" fill="' + LIGHT + '">Stack</text>']
 
     for i, (name, top_c, left_c, right_c) in enumerate(chips):
-        col = i % 4
-        row = i // 4
-        cx = col_xs[col]
-        cy = row_cy[row]
-        lbl_y = label_y[row]
+        cx = (i + 0.5) * col_w
 
         dur = round(3.0 + (i % 4) * 0.25, 2)
         begin = round(-(i * 0.45), 2)
 
-        # Cube size ~1.25x larger (s=27 vs s=22)
+        # Cube size 1.25x (s=27)
         s = 27
         cube_markup = cube(cx, cy, s, top_c, left_c, right_c)
 
@@ -362,7 +363,7 @@ def build_stack():
             f'dur="{dur}s" begin="{begin}s" repeatCount="indefinite"/>\n'
             f"    {cube_markup}\n"
             f"  </g>\n"
-            f'  <text x="{cx}" y="{lbl_y}" font-size="20" fill="{PALE}" text-anchor="middle">{name}</text>\n'
+            f'  <text x="{cx:.2f}" y="{lbl_y}" font-size="{font_sz}" fill="{PALE}" text-anchor="middle">{name}</text>\n'
             f"</g>"
         )
         body_parts.append(chip_group)
