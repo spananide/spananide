@@ -8,6 +8,7 @@ from common import (
     DIM,
     DEEP,
     cube,
+    font_css,
     svg,
     text_width,
     xml_escape,
@@ -234,11 +235,14 @@ def build_hero():
 
 
 def build_tiles():
-    """assets/tile-*.svg, 425x170 each (two side-by-side = 850).
-    Title/subtitle at bottom-left (x=28), block cluster on right half centered around x=320, y~85."""
+    """assets/tiles.svg, 850x356. Combined 2x2 grid of 4 category tiles (413x161 cards)."""
+    w, h = 850, 356
+
     tiles_data = [
         (
-            "tile-mods.svg",
+            "mods",
+            6,
+            6,
             "Mods & plugins",
             "Minecraft, Java",
             "0s",
@@ -250,7 +254,9 @@ def build_tiles():
             ),
         ),
         (
-            "tile-server.svg",
+            "server",
+            431,
+            6,
             "Home server",
             "Raspberry Pi, self-hosted",
             "-1s",
@@ -265,7 +271,9 @@ def build_tiles():
             ),
         ),
         (
-            "tile-bots.svg",
+            "bots",
+            6,
+            185,
             "Bots & automation",
             "Discord, scripts",
             "-2s",
@@ -280,7 +288,9 @@ def build_tiles():
             ),
         ),
         (
-            "tile-web.svg",
+            "web",
+            431,
+            185,
             "Web & apps",
             "sites, tools, mobile",
             "-3s",
@@ -297,9 +307,29 @@ def build_tiles():
         ),
     ]
 
-    card_animate = '<animate attributeName="stroke-opacity" values="0.25;0.6;0.25" dur="5s" repeatCount="indefinite"/>'
+    defs_list = []
+    tile_groups = []
+    all_texts = []
 
-    for fname, title, subtitle, offset, cluster_shapes in tiles_data:
+    for key, gx, gy, title, subtitle, offset, cluster_shapes in tiles_data:
+        all_texts.extend([title, subtitle])
+
+        # Unique gradient per tile
+        grad_id = f"card-grad-{key}"
+        defs_list.append(
+            f'<linearGradient id="{grad_id}" x1="0%" y1="0%" x2="0%" y2="100%">\n'
+            f'  <stop offset="0%" stop-color="{BG1}"/>\n'
+            f'  <stop offset="100%" stop-color="{BG2}"/>\n'
+            f"</linearGradient>"
+        )
+
+        card_rect = (
+            f'<rect x="0.75" y="0.75" width="411.5" height="159.5" rx="18" '
+            f'fill="url(#{grad_id})" stroke="{PURPLE}" stroke-opacity="0.4" stroke-width="1.5">\n'
+            f'  <animate attributeName="stroke-opacity" values="0.25;0.6;0.25" dur="5s" repeatCount="indefinite"/>\n'
+            f"</rect>"
+        )
+
         cluster_svg = (
             f"<g>\n"
             f'  <animateTransform attributeName="transform" type="translate" values="0 0; 0 -6; 0 0" '
@@ -313,14 +343,29 @@ def build_tiles():
             f'<text x="28" y="152" font-size="16" fill="{DIM}">{xml_escape(subtitle)}</text>'
         )
 
-        body = f"{cluster_svg}\n{text_content}"
-        font_text = f"{title} {subtitle}"
-        svg_content = svg(425, 170, body, text_for_font=font_text, card_attrs=card_animate)
+        tile_group = (
+            f'<g transform="translate({gx}, {gy})">\n'
+            f"{card_rect}\n"
+            f"{cluster_svg}\n"
+            f"{text_content}\n"
+            f"</g>"
+        )
+        tile_groups.append(tile_group)
 
-        out_path = os.path.join(ASSETS_DIR, fname)
-        with open(out_path, "w", encoding="utf-8") as f:
-            f.write(svg_content)
-        print("Wrote", out_path)
+    font_style = font_css(" ".join(all_texts))
+
+    svg_content = (
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="6 6 838 344" width="850" height="349">\n'
+        f"<defs>\n" + "\n".join(defs_list) + "\n</defs>\n"
+        f"{font_style}\n"
+        + "\n".join(tile_groups) + "\n"
+        f"</svg>"
+    )
+
+    out_path = os.path.join(ASSETS_DIR, "tiles.svg")
+    with open(out_path, "w", encoding="utf-8") as f:
+        f.write(svg_content)
+    print("Wrote", out_path)
 
 
 def build_stack():
@@ -337,18 +382,18 @@ def build_stack():
         ("Raspberry Pi", "#d978e8", "#aa3cc0", "#6f1a82"),
     ]
 
-    col_w = w / 8.0  # 106.25
+    col_w = (w - 56) / 8.0  # chips sit between the 28px side margins
     cy = 88.0
     lbl_y = 138.0
 
     # If any label wider than 100px at 20px, reduce all labels to 17px
     max_label_w_20 = max(text_width(name, 20) for name, *_ in chips)
-    font_sz = 17 if max_label_w_20 > 100.0 else 20
+    font_sz = 16 if max_label_w_20 > 90.0 else 20
 
     body_parts = ['<text x="28" y="40" font-size="26" fill="' + LIGHT + '">Stack</text>']
 
     for i, (name, top_c, left_c, right_c) in enumerate(chips):
-        cx = (i + 0.5) * col_w
+        cx = 28 + (i + 0.5) * col_w
 
         dur = round(3.0 + (i % 4) * 0.25, 2)
         begin = round(-(i * 0.45), 2)

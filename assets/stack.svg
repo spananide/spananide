@@ -10,66 +10,66 @@
 <text x="28" y="40" font-size="26" fill="#c9a8ff">Stack</text>
 <g>
   <g><animateTransform attributeName="transform" type="translate" values="0 0; 0 -5; 0 0" dur="3.0s" begin="-0.0s" repeatCount="indefinite"/>
-    <polygon points="53.12,88.00 76.51,74.50 53.12,61.00 29.74,74.50" fill="#b78cf7"/>
-<polygon points="53.12,88.00 29.74,74.50 29.74,101.50 53.12,115.00" fill="#8b4cdb"/>
-<polygon points="53.12,88.00 53.12,115.00 76.51,101.50 76.51,74.50" fill="#5a259c"/>
+    <polygon points="77.62,88.00 101.01,74.50 77.62,61.00 54.24,74.50" fill="#b78cf7"/>
+<polygon points="77.62,88.00 54.24,74.50 54.24,101.50 77.62,115.00" fill="#8b4cdb"/>
+<polygon points="77.62,88.00 77.62,115.00 101.01,101.50 101.01,74.50" fill="#5a259c"/>
   </g>
-  <text x="53.12" y="138.0" font-size="17" fill="#efe4ff" text-anchor="middle">Java</text>
+  <text x="77.62" y="138.0" font-size="16" fill="#efe4ff" text-anchor="middle">Java</text>
 </g>
 <g>
   <g><animateTransform attributeName="transform" type="translate" values="0 0; 0 -5; 0 0" dur="3.25s" begin="-0.45s" repeatCount="indefinite"/>
-    <polygon points="159.38,88.00 182.76,74.50 159.38,61.00 135.99,74.50" fill="#9d92fc"/>
-<polygon points="159.38,88.00 135.99,74.50 135.99,101.50 159.38,115.00" fill="#6d5dfc"/>
-<polygon points="159.38,88.00 159.38,115.00 182.76,101.50 182.76,74.50" fill="#4332c8"/>
+    <polygon points="176.88,88.00 200.26,74.50 176.88,61.00 153.49,74.50" fill="#9d92fc"/>
+<polygon points="176.88,88.00 153.49,74.50 153.49,101.50 176.88,115.00" fill="#6d5dfc"/>
+<polygon points="176.88,88.00 176.88,115.00 200.26,101.50 200.26,74.50" fill="#4332c8"/>
   </g>
-  <text x="159.38" y="138.0" font-size="17" fill="#efe4ff" text-anchor="middle">TypeScript</text>
+  <text x="176.88" y="138.0" font-size="16" fill="#efe4ff" text-anchor="middle">TypeScript</text>
 </g>
 <g>
   <g><animateTransform attributeName="transform" type="translate" values="0 0; 0 -5; 0 0" dur="3.5s" begin="-0.9s" repeatCount="indefinite"/>
-    <polygon points="265.62,88.00 289.01,74.50 265.62,61.00 242.24,74.50" fill="#c38ff7"/>
-<polygon points="265.62,88.00 242.24,74.50 242.24,101.50 265.62,115.00" fill="#9659db"/>
-<polygon points="265.62,88.00 265.62,115.00 289.01,101.50 289.01,74.50" fill="#602a9e"/>
+    <polygon points="276.12,88.00 299.51,74.50 276.12,61.00 252.74,74.50" fill="#c38ff7"/>
+<polygon points="276.12,88.00 252.74,74.50 252.74,101.50 276.12,115.00" fill="#9659db"/>
+<polygon points="276.12,88.00 276.12,115.00 299.51,101.50 299.51,74.50" fill="#602a9e"/>
   </g>
-  <text x="265.62" y="138.0" font-size="17" fill="#efe4ff" text-anchor="middle">Python</text>
+  <text x="276.12" y="138.0" font-size="16" fill="#efe4ff" text-anchor="middle">Python</text>
 </g>
 <g>
   <g><animateTransform attributeName="transform" type="translate" values="0 0; 0 -5; 0 0" dur="3.75s" begin="-1.35s" repeatCount="indefinite"/>
-    <polygon points="371.88,88.00 395.26,74.50 371.88,61.00 348.49,74.50" fill="#d886f0"/>
-<polygon points="371.88,88.00 348.49,74.50 348.49,101.50 371.88,115.00" fill="#b147d4"/>
-<polygon points="371.88,88.00 371.88,115.00 395.26,101.50 395.26,74.50" fill="#762294"/>
+    <polygon points="375.38,88.00 398.76,74.50 375.38,61.00 351.99,74.50" fill="#d886f0"/>
+<polygon points="375.38,88.00 351.99,74.50 351.99,101.50 375.38,115.00" fill="#b147d4"/>
+<polygon points="375.38,88.00 375.38,115.00 398.76,101.50 398.76,74.50" fill="#762294"/>
   </g>
-  <text x="371.88" y="138.0" font-size="17" fill="#efe4ff" text-anchor="middle">C#</text>
+  <text x="375.38" y="138.0" font-size="16" fill="#efe4ff" text-anchor="middle">C#</text>
 </g>
 <g>
   <g><animateTransform attributeName="transform" type="translate" values="0 0; 0 -5; 0 0" dur="3.0s" begin="-1.8s" repeatCount="indefinite"/>
-    <polygon points="478.12,88.00 501.51,74.50 478.12,61.00 454.74,74.50" fill="#e082db"/>
-<polygon points="478.12,88.00 454.74,74.50 454.74,101.50 478.12,115.00" fill="#b742b0"/>
-<polygon points="478.12,88.00 478.12,115.00 501.51,101.50 501.51,74.50" fill="#791f74"/>
+    <polygon points="474.62,88.00 498.01,74.50 474.62,61.00 451.24,74.50" fill="#e082db"/>
+<polygon points="474.62,88.00 451.24,74.50 451.24,101.50 474.62,115.00" fill="#b742b0"/>
+<polygon points="474.62,88.00 474.62,115.00 498.01,101.50 498.01,74.50" fill="#791f74"/>
   </g>
-  <text x="478.12" y="138.0" font-size="17" fill="#efe4ff" text-anchor="middle">Swift</text>
+  <text x="474.62" y="138.0" font-size="16" fill="#efe4ff" text-anchor="middle">Swift</text>
 </g>
 <g>
   <g><animateTransform attributeName="transform" type="translate" values="0 0; 0 -5; 0 0" dur="3.25s" begin="-2.25s" repeatCount="indefinite"/>
-    <polygon points="584.38,88.00 607.76,74.50 584.38,61.00 560.99,74.50" fill="#9598fa"/>
-<polygon points="584.38,88.00 560.99,74.50 560.99,101.50 584.38,115.00" fill="#5f66f5"/>
-<polygon points="584.38,88.00 584.38,115.00 607.76,101.50 607.76,74.50" fill="#383ebd"/>
+    <polygon points="573.88,88.00 597.26,74.50 573.88,61.00 550.49,74.50" fill="#9598fa"/>
+<polygon points="573.88,88.00 550.49,74.50 550.49,101.50 573.88,115.00" fill="#5f66f5"/>
+<polygon points="573.88,88.00 573.88,115.00 597.26,101.50 597.26,74.50" fill="#383ebd"/>
   </g>
-  <text x="584.38" y="138.0" font-size="17" fill="#efe4ff" text-anchor="middle">Blender</text>
+  <text x="573.88" y="138.0" font-size="16" fill="#efe4ff" text-anchor="middle">Blender</text>
 </g>
 <g>
   <g><animateTransform attributeName="transform" type="translate" values="0 0; 0 -5; 0 0" dur="3.5s" begin="-2.7s" repeatCount="indefinite"/>
-    <polygon points="690.62,88.00 714.01,74.50 690.62,61.00 667.24,74.50" fill="#bf88ff"/>
-<polygon points="690.62,88.00 667.24,74.50 667.24,101.50 690.62,115.00" fill="#8d4eed"/>
-<polygon points="690.62,88.00 690.62,115.00 714.01,101.50 714.01,74.50" fill="#5927ad"/>
+    <polygon points="673.12,88.00 696.51,74.50 673.12,61.00 649.74,74.50" fill="#bf88ff"/>
+<polygon points="673.12,88.00 649.74,74.50 649.74,101.50 673.12,115.00" fill="#8d4eed"/>
+<polygon points="673.12,88.00 673.12,115.00 696.51,101.50 696.51,74.50" fill="#5927ad"/>
   </g>
-  <text x="690.62" y="138.0" font-size="17" fill="#efe4ff" text-anchor="middle">Cloudflare</text>
+  <text x="673.12" y="138.0" font-size="16" fill="#efe4ff" text-anchor="middle">Cloudflare</text>
 </g>
 <g>
   <g><animateTransform attributeName="transform" type="translate" values="0 0; 0 -5; 0 0" dur="3.75s" begin="-3.15s" repeatCount="indefinite"/>
-    <polygon points="796.88,88.00 820.26,74.50 796.88,61.00 773.49,74.50" fill="#d978e8"/>
-<polygon points="796.88,88.00 773.49,74.50 773.49,101.50 796.88,115.00" fill="#aa3cc0"/>
-<polygon points="796.88,88.00 796.88,115.00 820.26,101.50 820.26,74.50" fill="#6f1a82"/>
+    <polygon points="772.38,88.00 795.76,74.50 772.38,61.00 748.99,74.50" fill="#d978e8"/>
+<polygon points="772.38,88.00 748.99,74.50 748.99,101.50 772.38,115.00" fill="#aa3cc0"/>
+<polygon points="772.38,88.00 772.38,115.00 795.76,101.50 795.76,74.50" fill="#6f1a82"/>
   </g>
-  <text x="796.88" y="138.0" font-size="17" fill="#efe4ff" text-anchor="middle">Raspberry Pi</text>
+  <text x="772.38" y="138.0" font-size="16" fill="#efe4ff" text-anchor="middle">Raspberry Pi</text>
 </g>
 </svg>
