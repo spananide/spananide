@@ -9,18 +9,18 @@
 <rect x="0.75" y="0.75" width="318.5" height="168.5" rx="18" fill="url(#card-grad)" stroke="#9955e7" stroke-opacity="0.4" stroke-width="1.5"><animate attributeName="stroke-opacity" values="0.25;0.6;0.25" dur="5s" repeatCount="indefinite"/></rect>
 <g>
   <animateTransform attributeName="transform" type="translate" values="0 0; 0 -6; 0 0" dur="4s" begin="-1s" repeatCount="indefinite"/>
-<polygon points="134.00,56.00 147.86,48.00 134.00,40.00 120.14,48.00" fill="#c9a8ff"/>
-<polygon points="134.00,56.00 120.14,48.00 120.14,64.00 134.00,72.00" fill="#9955e7"/>
-<polygon points="134.00,56.00 134.00,72.00 147.86,64.00 147.86,48.00" fill="#4b2a8a"/>
-<polygon points="160.00,56.00 173.86,48.00 160.00,40.00 146.14,48.00" fill="#c9a8ff"/>
-<polygon points="160.00,56.00 146.14,48.00 146.14,64.00 160.00,72.00" fill="#9955e7"/>
-<polygon points="160.00,56.00 160.00,72.00 173.86,64.00 173.86,48.00" fill="#4b2a8a"/>
-<polygon points="186.00,56.00 199.86,48.00 186.00,40.00 172.14,48.00" fill="#c9a8ff"/>
-<polygon points="186.00,56.00 172.14,48.00 172.14,64.00 186.00,72.00" fill="#9955e7"/>
-<polygon points="186.00,56.00 186.00,72.00 199.86,64.00 199.86,48.00" fill="#4b2a8a"/>
-<circle cx="146" cy="62" r="2.5" fill="#c9a8ff"><animate attributeName="opacity" values="1;0.2;1" dur="1.2s" begin="0s" repeatCount="indefinite"/></circle>
-<circle cx="160" cy="62" r="2.5" fill="#efe4ff"><animate attributeName="opacity" values="0.2;1;0.2" dur="0.9s" begin="0.3s" repeatCount="indefinite"/></circle>
-<circle cx="174" cy="62" r="2.5" fill="#c9a8ff"><animate attributeName="opacity" values="1;0.2;1" dur="1.5s" begin="0.7s" repeatCount="indefinite"/></circle>
+<polygon points="126.00,56.00 145.05,45.00 126.00,34.00 106.95,45.00" fill="#c9a8ff"/>
+<polygon points="126.00,56.00 106.95,45.00 106.95,67.00 126.00,78.00" fill="#9955e7"/>
+<polygon points="126.00,56.00 126.00,78.00 145.05,67.00 145.05,45.00" fill="#4b2a8a"/>
+<polygon points="160.00,56.00 179.05,45.00 160.00,34.00 140.95,45.00" fill="#c9a8ff"/>
+<polygon points="160.00,56.00 140.95,45.00 140.95,67.00 160.00,78.00" fill="#9955e7"/>
+<polygon points="160.00,56.00 160.00,78.00 179.05,67.00 179.05,45.00" fill="#4b2a8a"/>
+<polygon points="194.00,56.00 213.05,45.00 194.00,34.00 174.95,45.00" fill="#c9a8ff"/>
+<polygon points="194.00,56.00 174.95,45.00 174.95,67.00 194.00,78.00" fill="#9955e7"/>
+<polygon points="194.00,56.00 194.00,78.00 213.05,67.00 213.05,45.00" fill="#4b2a8a"/>
+<circle cx="142" cy="64" r="3" fill="#c9a8ff"><animate attributeName="opacity" values="1;0.2;1" dur="1.2s" begin="0s" repeatCount="indefinite"/></circle>
+<circle cx="160" cy="64" r="3" fill="#efe4ff"><animate attributeName="opacity" values="0.2;1;0.2" dur="0.9s" begin="0.3s" repeatCount="indefinite"/></circle>
+<circle cx="178" cy="64" r="3" fill="#c9a8ff"><animate attributeName="opacity" values="1;0.2;1" dur="1.5s" begin="0.7s" repeatCount="indefinite"/></circle>
 </g>
 <text x="28" y="128" font-size="30" fill="#efe4ff">Home server</text>
 <text x="28" y="152" font-size="16" fill="#7a5fb0">Raspberry Pi, self-hosted</text>

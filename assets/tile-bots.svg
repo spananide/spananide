@@ -9,15 +9,18 @@
 <rect x="0.75" y="0.75" width="318.5" height="168.5" rx="18" fill="url(#card-grad)" stroke="#9955e7" stroke-opacity="0.4" stroke-width="1.5"><animate attributeName="stroke-opacity" values="0.25;0.6;0.25" dur="5s" repeatCount="indefinite"/></rect>
 <g>
   <animateTransform attributeName="transform" type="translate" values="0 0; 0 -6; 0 0" dur="4s" begin="-2s" repeatCount="indefinite"/>
-<line x1="126" y1="52" x2="194" y2="52" stroke="#c9a8ff" stroke-width="2.5" stroke-dasharray="4,4">
+<line x1="120" y1="54" x2="200" y2="54" stroke="#c9a8ff" stroke-width="3" stroke-dasharray="4,4">
   <animate attributeName="stroke-opacity" values="0.25;1;0.25" dur="1.6s" repeatCount="indefinite"/>
 </line>
-<polygon points="124.00,52.00 138.72,43.50 124.00,35.00 109.28,43.50" fill="#c9a8ff"/>
-<polygon points="124.00,52.00 109.28,43.50 109.28,60.50 124.00,69.00" fill="#9955e7"/>
-<polygon points="124.00,52.00 124.00,69.00 138.72,60.50 138.72,43.50" fill="#4b2a8a"/>
-<polygon points="196.00,52.00 210.72,43.50 196.00,35.00 181.28,43.50" fill="#c9a8ff"/>
-<polygon points="196.00,52.00 181.28,43.50 181.28,60.50 196.00,69.00" fill="#9955e7"/>
-<polygon points="196.00,52.00 196.00,69.00 210.72,60.50 210.72,43.50" fill="#4b2a8a"/>
+<polygon points="120.00,54.00 139.05,43.00 120.00,32.00 100.95,43.00" fill="#c9a8ff"/>
+<polygon points="120.00,54.00 100.95,43.00 100.95,65.00 120.00,76.00" fill="#9955e7"/>
+<polygon points="120.00,54.00 120.00,76.00 139.05,65.00 139.05,43.00" fill="#4b2a8a"/>
+<polygon points="160.00,54.00 169.53,48.50 160.00,43.00 150.47,48.50" fill="#c9a8ff"/>
+<polygon points="160.00,54.00 150.47,48.50 150.47,59.50 160.00,65.00" fill="#9955e7"/>
+<polygon points="160.00,54.00 160.00,65.00 169.53,59.50 169.53,48.50" fill="#4b2a8a"/>
+<polygon points="200.00,54.00 219.05,43.00 200.00,32.00 180.95,43.00" fill="#c9a8ff"/>
+<polygon points="200.00,54.00 180.95,43.00 180.95,65.00 200.00,76.00" fill="#9955e7"/>
+<polygon points="200.00,54.00 200.00,76.00 219.05,65.00 219.05,43.00" fill="#4b2a8a"/>
 </g>
 <text x="28" y="128" font-size="30" fill="#efe4ff">Bots &amp; automation</text>
 <text x="28" y="152" font-size="16" fill="#7a5fb0">Discord, scripts</text>

@@ -74,18 +74,16 @@ def calculate_streaks(counts: list[int]) -> tuple[int, int]:
     return cur_streak, longest
 
 
-def build_city_svg(grid: list[list[int]], all_counts: list[int], total: int) -> str:
-    """assets/city.svg, 850x330. 3D isometric city representing 53 weeks x 7 days."""
-    w, h = 850, 330
-    tw = 13.0
-    th = 6.5
-    hw = tw / 2.0
-    hh = th / 2.0
+def build_city_svg(grid: list[list[int]], all_counts: list[int], total: int, week_dates: list = None) -> str:
+    """assets/city.svg, 850x330. Oblique skyline projection filling the 850x330 card."""
+    import datetime
 
-    # Center horizontally: (ox - 45.5 + ox + 344.5) / 2 = 425 => ox = 275.5
-    ox = 275.5
-    # oy = 118 leaves ~70px above for tallest block (h=47)
-    oy = 118.0
+    w, h_card = 850, 330
+    x0 = 35.0
+    y0 = 250.0
+    W = 14.0
+    dx = 6.0
+    dy = 5.0
 
     nz = sorted([c for c in all_counts if c > 0])
     if nz:
@@ -110,44 +108,53 @@ def build_city_svg(grid: list[list[int]], all_counts: list[int], total: int) -> 
     for col in range(53):
         for row in range(7):
             cnt = grid[col][row]
-            bx = ox + (col - row) * hw
-            by = oy + (col + row) * hh
-            blocks.append({"col": col, "row": row, "count": cnt, "bx": bx, "by": by})
+            bx = x0 + col * W + row * dx
+            by = y0 - row * dy
+            blocks.append({"col": col, "row": row, "count": cnt, "x": bx, "y": by})
 
-    # Sort back-to-front (painter's order: increasing col+row)
-    blocks.sort(key=lambda b: (b["col"] + b["row"], b["col"]))
+    # Painter's order: draw rows from the back (r=6) to the front (r=0),
+    # and within a row from right to left (c=52 down to 0) so nearer/left blocks overlap correctly.
+    blocks.sort(key=lambda b: (-b["row"], -b["col"]))
 
     blocks_svg = []
     for b in blocks:
         col = b["col"]
-        bx = b["bx"]
-        by = b["by"]
+        bx = b["x"]
+        by = b["y"]
         cnt = b["count"]
         lvl = get_level(cnt)
-
         delay_ms = col * 25
 
         if lvl == 0:
-            # Flat dark tile
-            pts = f"{bx:.1f},{by - hh:.1f} {bx + hw:.1f},{by:.1f} {bx:.1f},{by + hh:.1f} {bx - hw:.1f},{by:.1f}"
+            # Zero-count days: just a flat tile (the top parallelogram at height 0, DEEP 35% opacity)
+            pts = f"{bx:.1f},{by:.1f} {bx + 12:.1f},{by:.1f} {bx + 16.2:.1f},{by - 3.5:.1f} {bx + 4.2:.1f},{by - 3.5:.1f}"
             tile = f'<polygon points="{pts}" fill="{DEEP}" fill-opacity="0.35"/>'
         else:
-            bh = round(3.0 + min(cnt, 20) * 2.2, 1)
+            # Height scale: 4 + min(count, 20) * 5.5 px (max ~114px, top y >= 60)
+            bh = 4.0 + min(cnt, 20) * 5.5
+            if by - bh - 3.5 < 60.0:
+                bh = by - 3.5 - 60.0
+            bh = round(bh, 1)
+
             colors = RAMP[lvl]
 
-            top_pts = f"{bx:.1f},{by - hh - bh:.1f} {bx + hw:.1f},{by - bh:.1f} {bx:.1f},{by + hh - bh:.1f} {bx - hw:.1f},{by - bh:.1f}"
-            left_pts = f"{bx - hw:.1f},{by - bh:.1f} {bx:.1f},{by + hh - bh:.1f} {bx:.1f},{by + hh:.1f} {bx - hw:.1f},{by:.1f}"
-            right_pts = f"{bx:.1f},{by + hh - bh:.1f} {bx + hw:.1f},{by - bh:.1f} {bx + hw:.1f},{by:.1f} {bx:.1f},{by + hh:.1f}"
+            # Right side face = parallelogram on x+12 side in DARK color
+            r_pts = f"{bx + 12:.1f},{by - bh:.1f} {bx + 16.2:.1f},{by - bh - 3.5:.1f} {bx + 16.2:.1f},{by - 3.5:.1f} {bx + 12:.1f},{by:.1f}"
+            right_face = f'<polygon points="{r_pts}" fill="{colors["right"]}"/>'
 
-            tile = (
-                f'<polygon points="{left_pts}" fill="{colors["left"]}"/>\n'
-                f'<polygon points="{right_pts}" fill="{colors["right"]}"/>\n'
-                f'<polygon points="{top_pts}" fill="{colors["top"]}"/>'
-            )
+            # Front face = rect (x, y-h, 12, h) in MID color
+            front_face = f'<rect x="{bx:.1f}" y="{by - bh:.1f}" width="12" height="{bh:.1f}" fill="{colors["left"]}"/>'
+
+            # Top face = parallelogram in LIGHT top color
+            top_pts = f"{bx:.1f},{by - bh:.1f} {bx + 12:.1f},{by - bh:.1f} {bx + 16.2:.1f},{by - bh - 3.5:.1f} {bx + 4.2:.1f},{by - bh - 3.5:.1f}"
+            top_face = f'<polygon points="{top_pts}" fill="{colors["top"]}"/>'
+
+            tile = f"{right_face}\n{front_face}\n{top_face}"
 
         blocks_svg.append(f'<g class="b" style="animation-delay: {delay_ms}ms;">\n{tile}\n</g>')
 
-    glow_ellipse = f'<ellipse cx="425" cy="212" rx="210" ry="85" fill="{PURPLE}" opacity="0.12" filter="url(#glow)"/>'
+    # Wide glow ellipse: rx 400, ry 28, centered under the grid at the baseline (y0=250)
+    glow_ellipse = f'<ellipse cx="425" cy="250" rx="400" ry="28" fill="{PURPLE}" opacity="0.12" filter="url(#glow)"/>'
 
     title_left = f'<text x="28" y="44" font-size="22" fill="{LIGHT}">Last 12 months</text>'
     total_str = f"{total:,}"
@@ -157,11 +164,40 @@ def build_city_svg(grid: list[list[int]], all_counts: list[int], total: int) -> 
         f"</text>"
     )
 
-    body = f"{glow_ellipse}\n{title_left}\n{title_right}\n" + "\n".join(blocks_svg)
-    extra_css = ".b{animation:rise .6s ease-out both;}@keyframes rise{from{transform:translateY(14px);opacity:0;}to{transform:none;opacity:1;}}"
-    font_text = f"Last 12 months {total_str} contributions"
+    if not week_dates:
+        today = datetime.date.today()
+        start_date = today - datetime.timedelta(days=53 * 7 - 1)
+        week_dates = [start_date + datetime.timedelta(days=c * 7) for c in range(53)]
 
-    return svg(w, h, body, text_for_font=font_text, extra_css=extra_css)
+    month_labels_svg = []
+    month_names_set = set()
+    prev_m = None
+    prev_c = -10
+    for c, d in enumerate(week_dates):
+        m_name = d.strftime("%b")
+        if m_name != prev_m:
+            if c - prev_c >= 3 and (52 - c >= 2 or c == 52):
+                mx = x0 + c * W + 6.0
+                month_labels_svg.append(
+                    f'<text x="{mx:.1f}" y="282" font-size="12" fill="{DIM}" text-anchor="middle">{m_name}</text>'
+                )
+                month_names_set.add(m_name)
+                prev_c = c
+            prev_m = m_name
+
+    body = (
+        f"{glow_ellipse}\n"
+        f"{title_left}\n"
+        f"{title_right}\n"
+        + "\n".join(blocks_svg)
+        + "\n"
+        + "\n".join(month_labels_svg)
+    )
+
+    extra_css = ".b{animation:rise .6s ease-out both;}@keyframes rise{from{transform:translateY(14px);opacity:0;}to{transform:none;opacity:1;}}"
+    font_text = f"Last 12 months {total_str} contributions " + " ".join(sorted(month_names_set))
+
+    return svg(w, h_card, body, text_for_font=font_text, extra_css=extra_css)
 
 
 def build_cards_svg(total: int, cur_streak: int, longest_streak: int) -> str:
