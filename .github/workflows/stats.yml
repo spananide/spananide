@@ -1,0 +1,48 @@
+name: stats
+
+on:
+  schedule:
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'scripts/**'
+
+permissions:
+  contents: write
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install fonttools
+
+      - name: Build static assets
+        run: python scripts/build_assets.py
+
+      - name: Generate live stats
+        env:
+          GH_TOKEN: ${{ secrets.STATS_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "Error: STATS_TOKEN secret is empty or missing" >&2
+            exit 1
+          fi
+          python scripts/stats.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets
+          git diff --cached --quiet || (git commit -m "chore: update stats" && git push)
