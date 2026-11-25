@@ -9,32 +9,32 @@
 <rect x="0.75" y="0.75" width="848.5" height="148.5" rx="18" fill="url(#card-grad)" stroke="#9955e7" stroke-opacity="0.4" stroke-width="1.5"/>
 <text x="40" y="38" font-size="22" fill="#c9a8ff">Languages</text>
 <g clip-path="url(#langs-bar-clip)">
-<rect x="40.0" y="52.0" width="271.1" height="22.0" fill="#9955e7">
-  <animate attributeName="width" from="0" to="271.1" dur="0.8s" fill="freeze"/>
+<rect x="40.0" y="52.0" width="271.5" height="22.0" fill="#9955e7">
+  <animate attributeName="width" from="0" to="271.5" dur="0.8s" fill="freeze"/>
 </rect>
-<rect x="311.1" y="52.0" width="99.7" height="22.0" fill="#c9a8ff">
-  <animate attributeName="width" from="0" to="99.7" dur="0.8s" fill="freeze"/>
+<rect x="311.5" y="52.0" width="99.6" height="22.0" fill="#c9a8ff">
+  <animate attributeName="width" from="0" to="99.6" dur="0.8s" fill="freeze"/>
 </rect>
-<rect x="410.8" y="52.0" width="86.3" height="22.0" fill="#7c3aed">
-  <animate attributeName="width" from="0" to="86.3" dur="0.8s" fill="freeze"/>
+<rect x="411.1" y="52.0" width="86.2" height="22.0" fill="#7c3aed">
+  <animate attributeName="width" from="0" to="86.2" dur="0.8s" fill="freeze"/>
 </rect>
-<rect x="497.1" y="52.0" width="72.3" height="22.0" fill="#e879f9">
-  <animate attributeName="width" from="0" to="72.3" dur="0.8s" fill="freeze"/>
+<rect x="497.3" y="52.0" width="72.2" height="22.0" fill="#e879f9">
+  <animate attributeName="width" from="0" to="72.2" dur="0.8s" fill="freeze"/>
 </rect>
-<rect x="569.4" y="52.0" width="55.1" height="22.0" fill="#8b5cf6">
-  <animate attributeName="width" from="0" to="55.1" dur="0.8s" fill="freeze"/>
+<rect x="569.5" y="52.0" width="55.4" height="22.0" fill="#8b5cf6">
+  <animate attributeName="width" from="0" to="55.4" dur="0.8s" fill="freeze"/>
 </rect>
-<rect x="624.5" y="52.0" width="41.3" height="22.0" fill="#d946ef">
-  <animate attributeName="width" from="0" to="41.3" dur="0.8s" fill="freeze"/>
+<rect x="624.9" y="52.0" width="41.2" height="22.0" fill="#d946ef">
+  <animate attributeName="width" from="0" to="41.2" dur="0.8s" fill="freeze"/>
 </rect>
-<rect x="665.8" y="52.0" width="144.2" height="22.0" fill="#581c87">
-  <animate attributeName="width" from="0" to="144.2" dur="0.8s" fill="freeze"/>
+<rect x="666.1" y="52.0" width="143.9" height="22.0" fill="#581c87">
+  <animate attributeName="width" from="0" to="143.9" dur="0.8s" fill="freeze"/>
 </rect>
 </g>
 <g>
 <g>
 <circle cx="46.0" cy="99.0" r="5" fill="#9955e7"/>
-<text x="58.0" y="104.0" font-size="14"><tspan fill="#efe4ff">Swift</tspan> <tspan fill="#7a5fb0">35.2%</tspan></text>
+<text x="58.0" y="104.0" font-size="14"><tspan fill="#efe4ff">Swift</tspan> <tspan fill="#7a5fb0">35.3%</tspan></text>
 </g>
 <g>
 <circle cx="238.5" cy="99.0" r="5" fill="#c9a8ff"/>

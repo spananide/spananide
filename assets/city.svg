@@ -9,7 +9,7 @@
 <rect x="0.75" y="0.75" width="848.5" height="328.5" rx="18" fill="url(#card-grad)" stroke="#9955e7" stroke-opacity="0.4" stroke-width="1.5"/>
 <ellipse cx="425" cy="250" rx="400" ry="28" fill="#9955e7" opacity="0.12" filter="url(#glow)"/>
 <text x="28" y="44" font-size="22" fill="#c9a8ff">Last 12 months</text>
-<text x="822" y="44" font-size="22" text-anchor="end"><tspan fill="#efe4ff">779</tspan> <tspan fill="#7a5fb0">contributions</tspan></text>
+<text x="822" y="44" font-size="22" text-anchor="end"><tspan fill="#efe4ff">792</tspan> <tspan fill="#7a5fb0">contributions</tspan></text>
 <g class="b" style="animation-delay: 1300ms;">
 <polygon points="799.0,220.0 811.0,220.0 815.2,216.5 803.2,216.5" fill="#4b2a8a" fill-opacity="0.35"/>
 </g>
@@ -552,7 +552,9 @@
 <polygon points="59.0,230.0 71.0,230.0 75.2,226.5 63.2,226.5" fill="#4b2a8a" fill-opacity="0.35"/>
 </g>
 <g class="b" style="animation-delay: 1300ms;">
-<polygon points="781.0,235.0 793.0,235.0 797.2,231.5 785.2,231.5" fill="#4b2a8a" fill-opacity="0.35"/>
+<polygon points="793.0,159.5 797.2,156.0 797.2,231.5 793.0,235.0" fill="#7139b4"/>
+<rect x="781.0" y="159.5" width="12" height="75.5" fill="#9c60e5"/>
+<polygon points="781.0,159.5 793.0,159.5 797.2,156.0 785.2,156.0" fill="#c598fb"/>
 </g>
 <g class="b" style="animation-delay: 1275ms;">
 <polygon points="779.0,121.0 783.2,117.5 783.2,231.5 779.0,235.0" fill="#9763e4"/>
@@ -1272,7 +1274,7 @@
 <polygon points="35.0,250.0 47.0,250.0 51.2,246.5 39.2,246.5" fill="#4b2a8a" fill-opacity="0.35"/>
 </g>
 <text x="41.0" y="282" font-size="12" fill="#7a5fb0" text-anchor="middle">Nov</text>
-<text x="139.0" y="282" font-size="12" fill="#7a5fb0" text-anchor="middle">Jan</text>
+<text x="125.0" y="282" font-size="12" fill="#7a5fb0" text-anchor="middle">Jan</text>
 <text x="195.0" y="282" font-size="12" fill="#7a5fb0" text-anchor="middle">Feb</text>
 <text x="251.0" y="282" font-size="12" fill="#7a5fb0" text-anchor="middle">Mar</text>
 <text x="307.0" y="282" font-size="12" fill="#7a5fb0" text-anchor="middle">Apr</text>
@@ -1281,6 +1283,6 @@
 <text x="489.0" y="282" font-size="12" fill="#7a5fb0" text-anchor="middle">Jul</text>
 <text x="559.0" y="282" font-size="12" fill="#7a5fb0" text-anchor="middle">Aug</text>
 <text x="615.0" y="282" font-size="12" fill="#7a5fb0" text-anchor="middle">Sep</text>
-<text x="685.0" y="282" font-size="12" fill="#7a5fb0" text-anchor="middle">Oct</text>
+<text x="671.0" y="282" font-size="12" fill="#7a5fb0" text-anchor="middle">Oct</text>
 <text x="741.0" y="282" font-size="12" fill="#7a5fb0" text-anchor="middle">Nov</text>
 </svg>
