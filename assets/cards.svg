@@ -17,10 +17,10 @@
 <text x="141.6" y="112" font-size="18" fill="#7a5fb0" text-anchor="middle">Total</text>
 </g>
 <g>
-<polygon points="411.77,60.00 423.89,53.00 411.77,46.00 399.65,53.00" fill="#e082db"/>
-<polygon points="411.77,60.00 399.65,53.00 399.65,67.00 411.77,74.00" fill="#b742b0"/>
-<polygon points="411.77,60.00 411.77,74.00 423.89,67.00 423.89,53.00" fill="#791f74"/>
-<text x="433.9" y="78" font-size="56" fill="#efe4ff" filter="url(#glow)">1</text>
+<polygon points="403.37,60.00 415.49,53.00 403.37,46.00 391.25,53.00" fill="#e082db"/>
+<polygon points="403.37,60.00 391.25,53.00 391.25,67.00 403.37,74.00" fill="#b742b0"/>
+<polygon points="403.37,60.00 403.37,74.00 415.49,67.00 415.49,53.00" fill="#791f74"/>
+<text x="425.5" y="78" font-size="56" fill="#efe4ff" filter="url(#glow)">0</text>
 <text x="425.0" y="112" font-size="18" fill="#7a5fb0" text-anchor="middle">Current streak</text>
 </g>
 <g>
